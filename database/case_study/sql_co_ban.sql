@@ -64,7 +64,12 @@ select khach_hang.ho_ten from khach_hang;
 select month(hop_dong.ngay_lam_hop_dong) as thang, count(ma_khach_hang) as so_luong_khach_hang
 from hop_dong
 group by thang
-order by thang 
+order by thang ;
 
 -- bài 10
+select hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc, hop_dong.tien_dat_coc, 
+ifnull(sum(hop_dong_chi_tiet.so_luong),0) as so_luong_dich_vu_di_kem
+from hop_dong
+left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+group by hop_dong.ma_hop_dong
 
