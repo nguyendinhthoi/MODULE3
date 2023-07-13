@@ -61,8 +61,10 @@ union
 select khach_hang.ho_ten from khach_hang;
 
 -- bài 9
-select hop_dong.ngay_lam_hop_dong, count(ma_khach_hang) as so_khach_dat_phong
-group by hop_dong.ngay_lam_hop_dong
+select month(hop_dong.ngay_lam_hop_dong) as thang, count(ma_khach_hang) as so_luong_khach_hang
+from hop_dong
+group by thang
+order by thang 
 
-
+-- bài 10
 
