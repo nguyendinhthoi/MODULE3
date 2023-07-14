@@ -73,3 +73,4 @@ from hop_dong
 left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
 group by hop_dong.ma_hop_dong
 
+
