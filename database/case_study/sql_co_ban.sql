@@ -114,7 +114,8 @@ on dv.ma_dich_vu = hd.ma_dich_vu
 left join hop_dong_chi_tiet as hdct
 on hdct.ma_hop_dong = hd.ma_hop_dong
 where hd.ma_hop_dong not in 
-(select hd.ma_hop_dong where month(hd.ngay_lam_hop_dong) <=6 and year(hd.ngay_lam_hop_dong) = 2021)
+(select hd.ma_hop_dong 
+where month(hd.ngay_lam_hop_dong) <=6 and year(hd.ngay_lam_hop_dong) = 2021)
 and (month(hd.ngay_lam_hop_dong) >= 10 and year(hd.ngay_lam_hop_dong) = 2020)
 group by hd.ma_hop_dong;
 
@@ -123,8 +124,39 @@ select dvdk.ma_dich_vu_di_kem, dvdk.ten_dich_vu_di_kem, sum(hdct.so_luong) as so
 from dich_vu_di_kem as dvdk 
 join hop_dong_chi_tiet as hdct
 on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
-where sum(hdct.so_luong) in
-(select max(hdct.so_luong))
 group by dvdk.ma_dich_vu_di_kem
+having so_luong_dich_vu_di_kem =
+(select max(hdct.so_luong) from hop_dong_chi_tiet hdct);
 
--- ifnull(sum(hdct.so_luong),0)
+-- bài 14
+select hd.ma_hop_dong, ldv.ten_loai_dich_vu, dvdk.ten_dich_vu_di_kem, count(dvdk.ma_dich_vu_di_kem) as so_lan_su_dung
+from hop_dong as hd
+join dich_vu as dv
+on dv.ma_dich_vu = hd.ma_dich_vu
+join loai_dich_vu as ldv
+on ldv.ma_loai_dich_vu = dv.ma_loai_dich_vu
+join hop_dong_chi_tiet as hdct
+on hdct.ma_hop_dong = hd.ma_hop_dong
+join dich_vu_di_kem as dvdk
+on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+group by dvdk.ten_dich_vu_di_kem
+having so_lan_su_dung = 1
+order by hd.ma_hop_dong;
+
+-- bài 15
+select nv.ma_nhan_vien , nv.ho_ten, td.ten_trinh_do, bp.ten_bo_phan, nv.so_dien_thoai, nv.dia_chi
+from nhan_vien as nv
+join trinh_do as td
+on td.ma_trinh_do = nv.ma_trinh_do
+join bo_phan as bp
+on bp.ma_bo_phan = nv.ma_bo_phan
+join hop_dong as hd
+on hd.ma_nhan_vien = nv.ma_nhan_vien
+group by nv.ma_nhan_vien
+having count(hd.ma_nhan_vien) in 
+	(select count(hd.ma_nhan_vien)
+    from hop_dong
+	where count(hd.ma_nhan_vien)<4)
+
+
+
