@@ -65,7 +65,8 @@ VALUES (1, 1, 8, 1),
 select * from students
 where student_name like "h%";
 -- 2
-select * from classes where month(start_date)=12;
+select * from classes 
+where month(start_date)=12;
 -- 3
 select * from subjects 
 where credit between 3 and 5;
