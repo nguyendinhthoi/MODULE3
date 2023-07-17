@@ -156,7 +156,100 @@ group by nv.ma_nhan_vien
 having count(hd.ma_nhan_vien) in 
 	(select count(hd.ma_nhan_vien)
     from hop_dong
-	where count(hd.ma_nhan_vien)<4)
+	where count(hd.ma_nhan_vien)<4
+    );
+
+-- bài 16
+alter table nhan_vien 
+add is_delete bit(1) default 0;
+set sql_safe_updates = 0;
+update nhan_vien 
+set is_delete = 1
+where nhan_vien.ma_nhan_vien 
+not in (
+	select hop_dong.ma_nhan_vien 
+    from hop_dong
+    );
+set sql_safe_updates = 1;
+select * from nhan_vien
+where is_delete = 0;
+
+-- bài 17
+-- alter table khach_hang 
+-- add duoc_nang_hang bit(1) default 0;
+
+-- set sql_safe_updates = 0;
+-- update khach_hang 
+-- set duoc_nang_hang = 0
+-- where khach_hang.ho_ten in (
+-- 	select khach_hang.ho_ten 
+--     from (
+-- 	select khach_hang.ho_ten ,sum(ifnull(((hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia)),0) + dich_vu.chi_phi_thue) as tong_tien
+-- 	from khach_hang	
+--     left join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
+-- 	left join dich_vu on dich_vu.ma_dich_vu = hop_dong.ma_dich_vu
+-- 	left join hop_dong_chi_tiet on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong
+-- 	left join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem
+-- 	where year(hop_dong.ngay_lam_hop_dong) =2021
+--     group by khach_hang.ho_ten
+--     having sum(ifnull(((hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia)),0) + dich_vu.chi_phi_thue) > 10000000
+-- 	) as bang_phu    
+-- )
+-- 	and khach_hang.ho_ten in (
+--     select khach_hang.ho_ten
+--     from hop_dong
+--     left join khach_hang on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
+--     where year(hop_dong.ngay_lam_hop_dong) =2021
+--     );
+-- set sql_safe_updates = 1;
+
+
+-- select * from khach_hang
+
+-- bài 18
+alter table khach_hang 
+add is_delete bit(1) default 0;
+set sql_safe_updates = 0;
+
+update khach_hang 
+set khach_hang.is_delete = 1
+where khach_hang.ma_khach_hang in (
+	select * from (
+	select khach_hang.ma_khach_hang
+    from khach_hang
+    join hop_dong 
+    on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
+    where year(hop_dong.ngay_lam_hop_dong) < 2021 
+    ) as bang_phu
+);
+set sql_safe_updates = 1;
+
+select * from khach_hang where khach_hang.is_delete = 1;
+
+-- bài 19
+alter table dich_vu_di_kem 
+add is_double_price bit(1) default 0;
+
+set sql_safe_updates = 0;
+update dich_vu_di_kem
+set is_double_price = 1
+where dich_vu_di_kem.ma_dich_vu_di_kem
+in (
+	select 
+		dich_vu_di_kem.ma_dich_vu_di_kem
+        from hop_dong_chi_tiet
+        join dich_vu_di_kem on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem
+		join hop_dong on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+		where year(hop_dong.ngay_lam_hop_dong) = 2020 and hop_dong_chi_tiet.so_luong >10
+	);
+set sql_safe_updates = 1;
+select * from dich_vu_di_kem where is_double_price = 1;
 
 
 
+-- bài 20
+select nv.ma_nhan_vien, nv.ho_ten, nv.email, nv.so_dien_thoai, nv.ngay_sinh, nv.dia_chi
+from nhan_vien as nv
+union
+select kh.ma_khach_hang, kh.ho_ten, kh.email, kh.so_dien_thoai, kh.ngay_sinh, kh.dia_chi
+from khach_hang as kh
