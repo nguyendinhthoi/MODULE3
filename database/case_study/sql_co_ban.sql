@@ -233,15 +233,17 @@ add is_double_price bit(1) default 0;
 set sql_safe_updates = 0;
 update dich_vu_di_kem
 set is_double_price = 1
-where dich_vu_di_kem.ma_dich_vu_di_kem
+where ma_dich_vu_di_kem 
 in (
-	select 
-		dich_vu_di_kem.ma_dich_vu_di_kem
-        from hop_dong_chi_tiet
-        join dich_vu_di_kem on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem
-		join hop_dong on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
-		where year(hop_dong.ngay_lam_hop_dong) = 2020 and hop_dong_chi_tiet.so_luong >10
-	);
+	select hdct.ma_dich_vu_di_kem
+    from hop_dong_chi_tiet as hdct
+    join dich_vu_di_kem as dvdk
+    on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+    join hop_dong as hd
+    on hd.ma_hop_dong = hdct.ma_hop_dong
+    where year(hd.ngay_lam_hop_dong) = 2020 and hdct.so_luong >10
+    );
+
 set sql_safe_updates = 1;
 select * from dich_vu_di_kem where is_double_price = 1;
 
