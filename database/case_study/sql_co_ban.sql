@@ -176,6 +176,26 @@ select * from nhan_vien
 where is_delete = 0;
 
 -- bài 17
+update loai_khach
+set ten_loai_khach = "Diamond"
+where ma_loai_khach
+in (
+	select kh.ma_loai_khach 
+    from khach_hang as kh
+    join loai_khach as lk
+    on lk.ma_loai_khach = kh.ma_loai_khach
+    join hop_dong as hd
+    on hd.ma_khach_hang = kh.ma_khach_hang
+    join hop_dong_chi_tiet as hdct
+    on hdct.ma_hop_dong = hd.ma_hop_dong
+    join dich_vu_di_kem as dvdk
+    on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+    join dich_vu as dv
+    on dv.ma_dich_vu = hd.ma_dich_vu
+    where lk.ten_loai_khach = "Platinum" and year(hd.ngay_lam_hop_dong) =2021
+    group by lk.ma_loai_khach
+    having sum(ifnull((hdct.so_luong*dvdk.gia),0) + dv.chi_phi_thue) > 10000000
+);
 
 
 
