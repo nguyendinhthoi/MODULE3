@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 20px;
+}
+
+.item {
+    background-color: gold;
+    border: 1px solid grey;
+    min-height: 50px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(60px, auto);
+    grid-template-areas:
+            "aa aa"
+            "bb bb"
+}
+
+.item-5 {
+    /*grid-column-start: 2;*/
+    /*grid-column-end: 4;*/
+    /*grid-column: 2/4;*/
+    /*grid-row: 2/4;*/
+    grid-area: aa;
+}
+
+.item-4 {
+    grid-row: 2/5;
+}

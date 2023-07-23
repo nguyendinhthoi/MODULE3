@@ -93,7 +93,7 @@ join khach_hang as kh
 on hd.ma_khach_hang = kh.ma_khach_hang
 join loai_khach as lk
 on kh.ma_loai_khach = lk.ma_loai_khach
-where lk.ten_loai_khach like "Diamond" 
+where lk.ten_loai_khach = "Diamond" 
 and (kh.dia_chi like "%Vinh%" or kh.dia_chi like "%Quảng Ngãi%");
 
 -- bài 12
