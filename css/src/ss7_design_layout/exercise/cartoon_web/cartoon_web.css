@@ -32,6 +32,7 @@ a {
 .logo {
     grid-area: logo;
     font-size: 20px;
+    position: fixed;
 }
 
 .head-link {
