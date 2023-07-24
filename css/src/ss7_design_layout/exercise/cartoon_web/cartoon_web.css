@@ -19,6 +19,7 @@ a {
 
 #container {
     display: grid;
+    box-sizing: border-box;
     height: 100vh;
     grid-template-columns: 30% 1fr;
     grid-template-rows: 10% 10% 1fr 10%;
