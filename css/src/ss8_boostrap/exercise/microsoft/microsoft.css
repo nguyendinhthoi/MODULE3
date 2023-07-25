@@ -32,9 +32,10 @@ a {
     margin: 0 300px;
 }
 
-#content {
-    padding: 30px 100px;
+#primary-content {
+    padding: 30px 90px;
     text-align: center;
+
 }
 #footer{
     background-color: #CDCDCD;
