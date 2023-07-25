@@ -80,6 +80,7 @@ a {
 }
 
 .footer {
+    grid-area: footer;
     background-color: black;
     grid-column: 1/4;
     text-align: center;
