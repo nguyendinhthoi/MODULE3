@@ -36,12 +36,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Servlet" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -68,11 +67,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\CODEGYM\MODULE3\jsp_servlet\ss9_web_overview\exercise\product-discount-calculator\src\main\webapp" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.211" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.211" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
@@ -172,7 +166,7 @@
       <updated>1690296852113</updated>
       <workItem from="1690296852837" duration="3348000" />
       <workItem from="1690463376627" duration="803000" />
-      <workItem from="1690514937105" duration="1713000" />
+      <workItem from="1690464961272" duration="274000" />
     </task>
     <servers />
   </component>

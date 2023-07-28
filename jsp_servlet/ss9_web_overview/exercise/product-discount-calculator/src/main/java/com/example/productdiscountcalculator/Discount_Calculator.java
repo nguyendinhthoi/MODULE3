@@ -22,14 +22,12 @@ public class Discount_Calculator extends HttpServlet {
         double discount_amount = price * percent * 0.01;
         double discount_price = price - discount_amount;
 
-        PrintWriter writer = response.getWriter();
-        writer.println("<html>");
-        writer.println("<h1>Description Of Product : " + desc + "</h1>");
-        writer.println("<br>");
-        writer.println("The price and the the percent are :" + price + " , " + percent);
-        writer.println("<br>");
-        writer.println("The Discount Amount after Calculate is : " + discount_amount);
-        writer.println("<br>");
-        writer.println("The Discount Price after minus Discount Amount is : " + discount_price);
+        request.setAttribute("desc", desc);
+        request.setAttribute("price", price);
+        request.setAttribute("percent", percent);
+        request.setAttribute("discount_amount", discount_amount);
+        request.setAttribute("discount_price", discount_price);
+
+        request.getRequestDispatcher("calculate.jsp").forward(request, response);
     }
 }

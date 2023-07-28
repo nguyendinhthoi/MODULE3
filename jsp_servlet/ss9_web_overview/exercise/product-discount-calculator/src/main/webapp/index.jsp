@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-<form action="/display-discount" method="post">
+<form action="display-discount" method="post">
     <div>
         <label for="des">Product Description</label>
         <br>

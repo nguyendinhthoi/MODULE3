@@ -19,15 +19,18 @@ public class CalculatorServlet extends HttpServlet {
         double sNumber = Double.parseDouble(request.getParameter("s-operand"));
         String operator = request.getParameter("operator");
 
-        PrintWriter writer = response.getWriter();
-        writer.println("<html>");
-        writer.println("<h1>Result : </h1>");
         try {
             double result = Calculator.calculate(fNumber, sNumber, operator);
-            writer.println(fNumber + " " + operator + " " + sNumber + " = " + result);
+            request.setAttribute("fNumber", fNumber);
+            request.setAttribute("operator", operator);
+            request.setAttribute("sNumber", sNumber);
+            request.setAttribute("result", result);
+
+            request.getRequestDispatcher("result.jsp").forward(request, response);
         } catch (Exception e) {
-            writer.println("Error : "+e.getMessage());
+            request.setAttribute("error", e.getMessage());
+
+            request.getRequestDispatcher("error.jsp").forward(request, response);
         }
-        writer.println("</html>");
     }
 }
