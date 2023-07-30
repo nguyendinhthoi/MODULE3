@@ -1,48 +1,37 @@
 package com.customermanagement.service;
 
 import com.customermanagement.model.Customer;
+import com.customermanagement.repository.CustomerRepository;
+import com.customermanagement.repository.ICustomerRepository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 
 public class CustomerService implements ICustomerService {
-
-    private static Map<Integer, Customer> customerMap = new HashMap<>();
-
-    static {
-        customerMap.put(1, new Customer(1, "John", "john@codegym.vn", "Hanoi"));
-        customerMap.put(2, new Customer(2, "Bill", "bill@codegym.vn", "Danang"));
-        customerMap.put(3, new Customer(3, "Alex", "alex@codegym.vn", "Saigon"));
-        customerMap.put(4, new Customer(4, "Adam", "adam@codegym.vn", "Hue"));
-        customerMap.put(5, new Customer(5, "Sophia", "sophia@codegym.vn", "Beijin"));
-        customerMap.put(6, new Customer(6, "Rose", "rose@codegym.vn", "Miami"));
-    }
-
+    ICustomerRepository iCustomerRepository = new CustomerRepository();
 
     @Override
-    public List<Customer> findAll() {
-        return new ArrayList<>(customerMap.values());
+    public Map<Integer, Customer> findAll() {
+        return iCustomerRepository.findAll();
     }
 
     @Override
     public void save(Customer customer) {
-        customerMap.put(customer.getId(), customer);
+        iCustomerRepository.insertCustomer(customer);
     }
 
     @Override
     public Customer findById(int id) {
-        return customerMap.get(id);
+        return iCustomerRepository.findById(id);
     }
 
     @Override
     public void update(int id, Customer customer) {
-        customerMap.put(id, customer);
+        iCustomerRepository.updateCustomer(id,customer);
     }
 
     @Override
-    public void remove(int id) {
-        customerMap.remove(id);
+    public void remove(int id, boolean available) {
+        iCustomerRepository.deleteCustomer(id, available);
     }
 }

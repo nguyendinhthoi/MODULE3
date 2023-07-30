@@ -11,7 +11,7 @@ import java.util.List;
 public class CustomerMagementServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("abc");
+
         List<Customer> customerList = new ArrayList<>();
         customerList.add(new Customer("Lê Công Thị Thiện", "20-10-1999", "Hãy đến bên em", "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"));
         customerList.add(new Customer("Phan Thị Quốc Sang", "10-10-1999", "Cứu lấy em đi", "https://images.unsplash.com/photo-1645378999013-95abebf5f3c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"));
