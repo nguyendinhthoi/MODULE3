@@ -19,6 +19,5 @@ public class Base {
         }
         return connection;
     }
-
 }
 

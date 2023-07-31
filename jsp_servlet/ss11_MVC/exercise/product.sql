@@ -20,3 +20,5 @@ DELETE FROM product WHERE product_id = 5;
 
 UPDATE product SET product_name = "Fan" , product_description = "ok" , product_brand = "Kim Cuong", product_price = "300000" 
 WHERE product_id = 2; 
+
+SELECT * FROM product WHERE product_name = "Fqwe";
