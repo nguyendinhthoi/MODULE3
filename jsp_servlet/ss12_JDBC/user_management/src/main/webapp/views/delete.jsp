@@ -11,6 +11,7 @@
     <title>Delete User</title>
 </head>
 <body>
+<form method="post">
 <h2>Are you sure?</h2>
 <fieldset>
     <legend>User Information</legend>
@@ -33,5 +34,6 @@
         </tr>
     </table>
 </fieldset>
+</form>
 </body>
 </html>

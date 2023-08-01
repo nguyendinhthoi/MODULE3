@@ -14,6 +14,8 @@ public class ProductRepo implements IProductRepo {
 
     public static final String INSERT = "INSERT INTO `product_management`.`product` (`product_name`, `product_description` , `product_brand`, `product_price`) VALUES (?,?,?,?);";
     public static final String SELECT_ALL = "SELECT * FROM product;";
+    private static final String SELECT_BY_ID = "select * from product where product_id = ?";
+
     public static final String DELETE = "DELETE FROM product WHERE product_id = ?;";
     public static final String UPDATE = "UPDATE product SET product_name = ?" +
             " , product_description = ?" +
@@ -84,7 +86,26 @@ public class ProductRepo implements IProductRepo {
 
     @Override
     public Product findById(int id) {
-        return findAll().get(id - 1);
+
+        Connection connection = Base.getConnection();
+        Product product = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_ID);
+            preparedStatement.setInt(1, id);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String name = resultSet.getString("product_name");
+                String desc = resultSet.getString("product_description");
+                String brand = resultSet.getString("product_brand");
+                double price = resultSet.getDouble("product_price");
+                product = new Product(name, desc, brand, price);
+            }
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return product;
     }
 
     @Override

@@ -15,6 +15,7 @@ import java.util.List;
 public class UserRepo implements IUserRepo {
     private static final String INSERT = "insert into users(name, email, country) values(?,?,?);";
     private static final String SELECT_ALL = "select * from users";
+    private static final String SELECT_BY_ID = "select * from users where id = ?";
     private static final String SELECT_BY_COUNTRY = "select * from users where country = ?";
     private static final String DELETE = "delete from users where id = ?";
     private static final String UPDATE = "update users set name = ?" +
@@ -65,7 +66,24 @@ public class UserRepo implements IUserRepo {
 
     @Override
     public User findId(int id) {
-        return findAll().get(id - 1);
+        Connection connection = Base.getConnection();
+        User user = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_ID);
+            preparedStatement.setInt(1, id);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String country = resultSet.getString("country");
+                user = new User(name, email, country);
+            }
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return user;
     }
 
     @Override

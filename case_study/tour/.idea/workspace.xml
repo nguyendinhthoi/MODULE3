@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd9c3512-1245-4cdf-a388-d6902e03feca" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss11_MVC/exercise/product.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss11_MVC/exercise/product.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss11_MVC/exercise/product_management/src/main/java/com/example/product_management/repository/database/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss11_MVC/exercise/product_management/src/main/java/com/example/product_management/repository/database/Base.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/controller/TourServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/controller/TourServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss11_MVC/exercise/product_management/src/main/java/com/example/product_management/repository/product/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss11_MVC/exercise/product_management/src/main/java/com/example/product_management/repository/product/ProductRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/src/main/java/com/user_management/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/src/main/java/com/user_management/controller/UserServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="case_study_tour" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,7 +66,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/CODEGYM/MODULE3/jsp_servlet/ss11_MVC/exercise/product_management",
+    "last_opened_file_path": "F:/CODEGYM/MODULE3/jsp_servlet/ss12_JDBC/user_management",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -175,6 +194,7 @@
       <option name="presentableId" value="Default" />
       <updated>1690775193273</updated>
       <workItem from="1690775194256" duration="9907000" />
+      <workItem from="1690845484965" duration="771000" />
     </task>
     <servers />
   </component>

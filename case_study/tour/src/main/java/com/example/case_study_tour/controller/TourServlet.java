@@ -14,11 +14,28 @@ public class TourServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String action = request.getParameter("action");
+        if (action == null){
+            action = "";
+        }
+        switch (action){
+            case "create":
+                break;
+            case "edit":
+                break;
+            case "delete":
+                break;
+            default:
+                showListTour(request,response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
+    private void showListTour(HttpServletRequest request, HttpServletResponse response) {
+    }
+
 }

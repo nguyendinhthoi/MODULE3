@@ -90,12 +90,11 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void insertProduct(HttpServletRequest request, HttpServletResponse response) {
-        int id = (int) (Math.random() * 1000);
         String name = request.getParameter("name");
         String desc = request.getParameter("desc");
         String brand = request.getParameter("brand");
         double price = Double.parseDouble(request.getParameter("price"));
-        Product product = new Product(id, name, desc, brand, price);
+        Product product = new Product(name, desc, brand, price);
         productService.insertProduct(product);
 
         request.setAttribute("message", "New product was created");
