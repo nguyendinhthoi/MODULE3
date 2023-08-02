@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f85d5d85-c3f6-4be3-be30-290887a913aa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/model/TourListDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/repository/ITourPlaceRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/repository/TourPlaceRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/service/ITourPlaceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/service/TourPlaceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/webapp/views/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/webapp/views/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../css/src/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../css/src/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../css/src/test_grid_css/aaaa.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../css/src/testmain.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../case_study/tour/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../case_study/tour/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../case_study/tour/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../case_study/tour/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/controller/TourServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/controller/TourServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/model/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/model/Tour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/repository/ITourRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/repository/ITourRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/repository/TourRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/repository/TourRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/service/ITourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/service/ITourService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/service/TourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/java/com/example/case_study_tour/service/TourService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../case_study/tour/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../case_study/tour/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../case_study/tour_booking.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../case_study/tour_booking.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../css/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../css/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="user_management" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="Servlet" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="2TKx7SwPktfjWq4QmiSqzowPYqH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "F:/CODEGYM/MODULE3/jsp_servlet/ss13_transaction/exercise/user_management_sp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.211" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.211" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="Gradle : com : user_management-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="8c03a39f-73b6-404b-bb23-c57d9ff61a08" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51221" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com : user_management-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f85d5d85-c3f6-4be3-be30-290887a913aa" name="Changes" comment="" />
+      <created>1690805412042</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690805412042</updated>
+      <workItem from="1690805413058" duration="10857000" />
+      <workItem from="1690817518963" duration="2107000" />
+      <workItem from="1690844766172" duration="219000" />
+      <workItem from="1690845524810" duration="742000" />
+      <workItem from="1690858481475" duration="2694000" />
+      <workItem from="1690862282084" duration="260000" />
+      <workItem from="1690931195791" duration="2581000" />
+      <workItem from="1690937679760" duration="2495000" />
+      <workItem from="1690976636150" duration="2540000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

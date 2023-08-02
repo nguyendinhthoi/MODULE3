@@ -2,9 +2,6 @@ package com.user_management.repository.user;
 
 import com.user_management.model.User;
 import com.user_management.repository.database.Base;
-import jdk.nashorn.internal.runtime.regexp.joni.ast.StringNode;
-
-import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -5,10 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd9c3512-1245-4cdf-a388-d6902e03feca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/model/TourListDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/repository/ITourPlaceRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/repository/TourPlaceRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/service/ITourPlaceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/service/TourPlaceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../css/src/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../css/src/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../css/src/test_grid_css/aaaa.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../css/src/testmain.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/controller/TourServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/controller/TourServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss11_MVC/exercise/product_management/src/main/java/com/example/product_management/repository/product/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss11_MVC/exercise/product_management/src/main/java/com/example/product_management/repository/product/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/src/main/java/com/user_management/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/src/main/java/com/user_management/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/model/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/model/Tour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/repository/ITourRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/repository/ITourRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/repository/TourRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/repository/TourRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/service/ITourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/service/ITourService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/service/TourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/case_study_tour/service/TourService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tour_booking.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../tour_booking.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../css/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../css/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/src/main/java/com/user_management/repository/user/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../jsp_servlet/ss12_JDBC/user_management/src/main/java/com/user_management/repository/user/UserRepo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +61,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Servlet" />
+        <option value="HTML File" />
+        <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -63,14 +86,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/CODEGYM/MODULE3/jsp_servlet/ss12_JDBC/user_management",
+    "last_opened_file_path": "C:/Users/ADMIN/Downloads/src1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -195,6 +220,11 @@
       <updated>1690775193273</updated>
       <workItem from="1690775194256" duration="9907000" />
       <workItem from="1690845484965" duration="771000" />
+      <workItem from="1690861504254" duration="3329000" />
+      <workItem from="1690869572459" duration="6867000" />
+      <workItem from="1690902361017" duration="2325000" />
+      <workItem from="1690944092389" duration="3124000" />
+      <workItem from="1690954501947" duration="13980000" />
     </task>
     <servers />
   </component>

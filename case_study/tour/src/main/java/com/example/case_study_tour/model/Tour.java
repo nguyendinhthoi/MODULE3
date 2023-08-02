@@ -1,35 +1,41 @@
 package com.example.case_study_tour.model;
 
 public class Tour {
+//tourList.add(new Tour(id, name, desc, price, seat, s_date, e_date, id_e, s_place, e_place, id_place, image));
+
     private int tourId;
     private String tourName;
     private String tourDesc;
-    private String tourPrice;
+    private double tourPrice;
     private int availableSeat;
     private String startDate;
     private String endDate;
+    private int employeeId;
     private String placeStart;
     private String placeEnd;
     private int tourPlaceId;
-    private int employeeId;
+    private String image;
 
     public Tour() {
     }
 
-    public Tour(String tourName, String tourDesc, String tourPrice, int availableSeat, String startDate, String endDate, String placeStart, String placeEnd, int tourPlaceId, int employeeId) {
+    public Tour(String tourName, String tourDesc, double tourPrice, int availableSeat, String startDate,
+                String endDate, int employeeId, String placeStart, String placeEnd, int tourPlaceId, String image) {
         this.tourName = tourName;
         this.tourDesc = tourDesc;
         this.tourPrice = tourPrice;
         this.availableSeat = availableSeat;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.employeeId = employeeId;
         this.placeStart = placeStart;
         this.placeEnd = placeEnd;
         this.tourPlaceId = tourPlaceId;
-        this.employeeId = employeeId;
+        this.image = image;
     }
 
-    public Tour(int tourId, String tourName, String tourDesc, String tourPrice, int availableSeat, String startDate, String endDate, String placeStart, String placeEnd, int tourPlaceId, int employeeId) {
+    public Tour(int tourId, String tourName, String tourDesc, double tourPrice, int availableSeat, String startDate,
+                String endDate, int employeeId, String placeStart, String placeEnd, int tourPlaceId, String image) {
         this.tourId = tourId;
         this.tourName = tourName;
         this.tourDesc = tourDesc;
@@ -37,10 +43,11 @@ public class Tour {
         this.availableSeat = availableSeat;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.employeeId = employeeId;
         this.placeStart = placeStart;
         this.placeEnd = placeEnd;
         this.tourPlaceId = tourPlaceId;
-        this.employeeId = employeeId;
+        this.image = image;
     }
 
     public int getTourId() {
@@ -67,11 +74,11 @@ public class Tour {
         this.tourDesc = tourDesc;
     }
 
-    public String getTourPrice() {
+    public double getTourPrice() {
         return tourPrice;
     }
 
-    public void setTourPrice(String tourPrice) {
+    public void setTourPrice(double tourPrice) {
         this.tourPrice = tourPrice;
     }
 
@@ -99,6 +106,14 @@ public class Tour {
         this.endDate = endDate;
     }
 
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
     public String getPlaceStart() {
         return placeStart;
     }
@@ -123,28 +138,11 @@ public class Tour {
         this.tourPlaceId = tourPlaceId;
     }
 
-    public int getEmployeeId() {
-        return employeeId;
+    public String getImage() {
+        return image;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    @Override
-    public String toString() {
-        return "Tour{" +
-                "tourId=" + tourId +
-                ", tourName='" + tourName + '\'' +
-                ", tourDesc='" + tourDesc + '\'' +
-                ", tourPrice='" + tourPrice + '\'' +
-                ", availableSeat=" + availableSeat +
-                ", startDate='" + startDate + '\'' +
-                ", endDate='" + endDate + '\'' +
-                ", placeStart='" + placeStart + '\'' +
-                ", placeEnd='" + placeEnd + '\'' +
-                ", tourPlaceId=" + tourPlaceId +
-                ", employeeId=" + employeeId +
-                '}';
+    public void setImage(String image) {
+        this.image = image;
     }
 }
