@@ -7,6 +7,10 @@ public class TourPlace {
     public TourPlace() {
     }
 
+    public TourPlace(int placeId) {
+        this.tourPlaceId = placeId;
+    }
+
     public TourPlace(String placeName) {
         this.placeName = placeName;
     }
@@ -15,6 +19,7 @@ public class TourPlace {
         this.tourPlaceId = tourPlaceId;
         this.placeName = placeName;
     }
+
 
     public int getTourPlaceId() {
         return tourPlaceId;

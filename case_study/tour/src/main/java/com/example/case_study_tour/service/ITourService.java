@@ -1,17 +1,26 @@
 package com.example.case_study_tour.service;
 
+import com.example.case_study_tour.model.ENameCate;
 import com.example.case_study_tour.model.Tour;
-import com.example.case_study_tour.model.TourListDTO;
-import com.example.case_study_tour.model.TourPlace;
+import com.example.case_study_tour.model.dto.TourListDTO;
 
 import java.util.List;
 
 public interface ITourService {
 
-    List<Tour> display();
 
-    List<TourListDTO> displayDTO();
+    void createTour(Tour tour);
 
 
-    void createTour(TourListDTO tourListDTO);
+    void deleteTour(int id);
+
+    List<TourListDTO> displayUnDel();
+
+
+    void editTour(int id, Tour tour);
+
+    Tour findTour(int id);
+
+    TourListDTO findTourDTO(int id);
+
 }

@@ -1,5 +1,7 @@
 package com.example.case_study_tour.model;
 
+import java.util.List;
+
 public class Tour {
 //tourList.add(new Tour(id, name, desc, price, seat, s_date, e_date, id_e, s_place, e_place, id_place, image));
 
@@ -14,13 +16,13 @@ public class Tour {
     private String placeStart;
     private String placeEnd;
     private int tourPlaceId;
-    private String image;
+    private List<String> image;
 
     public Tour() {
     }
 
-    public Tour(String tourName, String tourDesc, double tourPrice, int availableSeat, String startDate,
-                String endDate, int employeeId, String placeStart, String placeEnd, int tourPlaceId, String image) {
+    public Tour(String tourName, String tourDesc, double tourPrice, int availableSeat, String startDate, String endDate
+            , int employeeId, String placeStart, String placeEnd, int tourPlaceId, List<String> image) {
         this.tourName = tourName;
         this.tourDesc = tourDesc;
         this.tourPrice = tourPrice;
@@ -35,7 +37,7 @@ public class Tour {
     }
 
     public Tour(int tourId, String tourName, String tourDesc, double tourPrice, int availableSeat, String startDate,
-                String endDate, int employeeId, String placeStart, String placeEnd, int tourPlaceId, String image) {
+                String endDate, int employeeId, String placeStart, String placeEnd, int tourPlaceId, List<String> image) {
         this.tourId = tourId;
         this.tourName = tourName;
         this.tourDesc = tourDesc;
@@ -138,11 +140,11 @@ public class Tour {
         this.tourPlaceId = tourPlaceId;
     }
 
-    public String getImage() {
+    public List<String> getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(List<String> image) {
         this.image = image;
     }
 }

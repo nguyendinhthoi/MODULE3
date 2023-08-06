@@ -1,0 +1,30 @@
+* {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.container .thead td {
+    font-weight: bold;
+}
+
+.container-fluid {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    height: 100vh;
+    grid-template-areas:
+            "sidebar table table table"
+            "sidebar table table table"
+            "sidebar table table table"
+}
+
+.side-bar {
+    grid-area: sidebar;
+    background-color: #0f3371;
+}
+
+.table {
+    grid-area: table;
+    width: auto;
+}
