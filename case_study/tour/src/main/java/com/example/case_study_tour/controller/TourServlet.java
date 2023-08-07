@@ -48,6 +48,7 @@ public class TourServlet extends HttpServlet {
     }
 
 
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -63,9 +64,6 @@ public class TourServlet extends HttpServlet {
                 break;
             case "delete":
                 deleteTour(request, response);
-                break;
-            case "undoDelete":
-                undoDelete(request, response);
                 break;
             default:
                 showListTour(request, response);
@@ -267,8 +265,6 @@ public class TourServlet extends HttpServlet {
         }
     }
 
-    private void undoDelete(HttpServletRequest request, HttpServletResponse response) {
 
-    }
 }
 

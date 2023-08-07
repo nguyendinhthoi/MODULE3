@@ -19,4 +19,5 @@ public interface ITourRepo {
     Tour findTour(int id);
 
     TourListDTO findTourDTO(int id);
+
 }

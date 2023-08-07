@@ -33,9 +33,6 @@
                 <td>Sửa</td>
                 <td>
                     Xoá
-                    <a role="button" class="btn" href="tourServlet">
-                        <i class="fa-solid fa-rotate fa-spin" title="Khôi Phục Mục Xoá" style="color: #0f3371;"></i>
-                    </a>
                 </td>
             </tr>
             </thead>
@@ -72,7 +69,8 @@
                         </a>
                     </td>
                     <td>
-                        <button type="button" class="btn" onclick="showModal('${tour.getTourId()}','${tour.getTourName()}')">
+                        <button type="button" class="btn"
+                                onclick="showModal('${tour.getTourId()}','${tour.getTourName()}')">
                             <i class="fa-solid fa-trash fa-beat" title="Xoá Tour" style="color: #ea060a;"></i>
                         </button>
                     </td>
@@ -101,26 +99,6 @@
             </div>
         </div>
     </form>
-    <form action="/tourServlet?action=undoDelete" method="post">
-        <div class="modal fade" id="undoDeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel1">KHÔI PHỤC</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <input type="hidden" name="code" id="codeUndo">
-                    <div class="modal-body">
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="submit" class="btn btn-primary">Xác nhận</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
 </div>
 
 <script src="/bootstrap-5.2.3-dist/js/bootstrap.bundle.js"></script>
@@ -130,7 +108,7 @@
 <script>
     new DataTable('#table');
 
-    function showModal(id,name) {
+    function showModal(id, name) {
         document.getElementById("name").innerHTML = name;
         document.getElementById("code").value = id;
         $("#deleteModal").modal("show");
