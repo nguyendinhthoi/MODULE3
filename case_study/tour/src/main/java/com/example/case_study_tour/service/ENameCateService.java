@@ -23,4 +23,9 @@ public class ENameCateService implements IENameCateService{
     public ENameCate getIdAvailable(int employeeId, String s_date, String e_date) {
         return nameCateRepo.getIdAvailable(employeeId,s_date,e_date);
     }
+
+    @Override
+    public void updateCateDel() {
+        nameCateRepo.updateCateDel();
+    }
 }

@@ -9,7 +9,7 @@
             color: green;
         }
 
-        .messageE, .messageDate {
+        .messageE, .messageDate, .messageDB {
             color: red;
         }
     </style>
@@ -26,28 +26,31 @@
 <c:if test="${messageDate != null}">
     <span class="messageDate">${messageDate}</span>
 </c:if>
+<c:if test="${messageDB != null}">
+    <span class="messageDB">${messageDB}</span>
+</c:if>
 <div class="container">
     <form class="form-control" method="post">
         <fieldset>
-            <legend>Thông tin Tour</legend>
+            <legend>Thông tin tour</legend>
             <table class="table table-hover table-bordered">
                 <tr>
                     <td>
-                        <label class="form-label" for="tour_name">Tên Tour</label>
+                        <label class="form-label" for="tour_name">Tên tour</label>
                     </td>
                     <td>
                         <input id="tour_name" name="name" placeholder="NHẬP TÊN TOUR" class="form-control input-md"
-                               required="" type="text">
+                               required="" type="text" value="${tour.getTourName()}">
                     </td>
                 </tr>
                 <!-- Select Basic -->
                 <tr>
                     <td>
-                        <label class=" form-label" for="t-place-id">Khu Vực</label>
+                        <label class=" form-label" for="t-place-id">Khu vực</label>
                     </td>
                     <td>
                         <select id="t-place-id" name="t-place-id" class="form-control" required>
-                            <option value="" disabled selected>Hãy chọn Vùng Miền</option>
+                            <option value="" disabled selected>Hãy chọn vùng miền</option>
                             <c:forEach var="place" items="${place}">
                                 <option value="${place.getTourPlaceId()}">
                                         ${place.getPlaceName()}
@@ -59,11 +62,11 @@
                 <!-- Text input-->
                 <tr>
                     <td>
-                        <label class="form-lable" for="price">Giá Tour</label>
+                        <label class="form-lable" for="price">Giá tour</label>
                     </td>
                     <td>
                         <input id="price" name="price" placeholder="NHẬP GIÁ TOUR"
-                               class="form-control input-md" required="" type="number">
+                               class="form-control input-md" required="" type="number" value="${tour.getTourPrice()}">
                     </td>
                 </tr>
                 <!-- Text input-->
@@ -72,48 +75,39 @@
                         <label class="form-lable" for="quantity">Số lượng</label></td>
                     <td>
                         <input id="quantity" name="quantity" placeholder="NHẬP SỐ LUỢNG"
-                               class="form-control input-md" required="" type="number">
-                    </td>
-                </tr>
-                <!-- Textarea -->
-                <tr>
-                    <td>
-                        <label class="form-lable" for="desc">Mô Tả</label>
-                    </td>
-                    <td>
-                        <textarea class="form-control" id="desc" name="desc" placeholder="NHẬP MÔ TẢ"
-                                  required></textarea>
+                               class="form-control input-md" required="" type="number"
+                               value="${tour.getAvailableSeat()}">
                     </td>
                 </tr>
                 <%--                <!-- Text input-->--%>
                 <tr>
                     <td>
-                        <label class="form-lable" for="s-date">Ngày Bắt Đầu</label>
+                        <label class="form-lable" for="s-date">Ngày bắt đầu</label>
                     </td>
                     <td>
                         <input id="s-date" name="s-date" placeholder="CHỌN NGÀY BẮT ĐẦU"
-                               class="form-control input-md" required="" type="date">
+                               class="form-control input-md" required="" type="date" value="${tour.getStartDate()}">
                     </td>
                 </tr>
                 <!-- Text input-->
                 <tr>
                     <td>
-                        <label class="form-lable" for="e-date">Ngày Kết Thúc</label>
+                        <label class="form-lable" for="e-date">Ngày kết thúc</label>
                     </td>
                     <td>
                         <input id="e-date" name="e-date" placeholder="CHỌN NGÀY KẾT THÚC"
-                               class="form-control input-md" required="" type="date">
+                               class="form-control input-md" required="" type="date" value="${tour.getEndDate()}">
                     </td>
                 </tr>
 
                 <!-- Text input-->
                 <tr>
                     <td>
-                        <label class="form-label" for="eName">Tên Hướng Dẫn Viên</label>
+                        <label class="form-label" for="eName">Tên hướng dẫn viên</label>
                     </td>
                     <td>
                         <select id="eName" name="e-id" class="form-control" required>
-                            <option value="" disabled selected>Hãy chọn Hướng Dẫn Viên</option>
+                            <option value="" disabled selected>Hãy chọn hướng dẫn viên</option>
                             <c:forEach var="eName" items="${nameEmployee}">
                                 <option value="${eName.getEmployeeId()}">
                                         ${eName.getEmployeeName()}
@@ -126,30 +120,30 @@
                 <!-- Text input-->
                 <tr>
                     <td>
-                        <label class="form-lable" for="s-place">Điểm Xuất Phát</label>
+                        <label class="form-lable" for="s-place">Điểm xuất phát</label>
                     </td>
                     <td>
                         <input id="s-place" name="s-place" placeholder="NHậP ĐIỂM BẮT ĐẦU" class="form-control input-md"
                                required=""
-                               type="text">
+                               type="text" value="${tour.getPlaceStart()}">
                     </td>
                 </tr>
                 <%--                <!-- Text input-->--%>
                 <tr>
                     <td>
-                        <label class="form-label" for="e-place">Điểm Đến</label>
+                        <label class="form-label" for="e-place">Điểm đến</label>
                     </td>
                     <td>
                         <input id="e-place" name="e-place" placeholder="NHậP ĐIỂM KẾT THÚC"
                                class="form-control input-md"
                                required=""
-                               type="text">
+                               type="text" value="${tour.getPlaceEnd()}">
                     </td>
                 </tr>
                 <!-- File Button -->
                 <tr>
                     <td rowspan="4">
-                        <label class="form-label" for="pic1">Thêm Ảnh</label>
+                        <label class="form-label" for="pic1">Thêm ảnh</label>
                     </td>
                 </tr>
                 <tr>
@@ -165,6 +159,16 @@
                 <tr>
                     <td>
                         <input id="pic3" name="pic3" class="input-file" type="file" required>
+                    </td>
+                </tr>
+                <!-- Textarea -->
+                <tr>
+                    <td>
+                        <label class="form-lable" for="desc">Mô tả</label>
+                    </td>
+                    <td>
+                        <textarea class="form-control" id="desc" name="desc" placeholder="NHẬP MÔ TẢ"
+                                  required>${tour.getTourDesc()}</textarea>
                     </td>
                 </tr>
                 <tr>

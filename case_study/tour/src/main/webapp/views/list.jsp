@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="/views/list.css">
 </head>
 <body>
+<jsp:include page="/header.jsp"></jsp:include>
 <div class="container-fluid">
-    <div class="side-bar">abc</div>
     <div class="content row">
         <table id="table" class="table table-hover table-striped table-bordered">
             <thead class="thead col-12 col-sm-6 col-md-3 col-xl-auto">

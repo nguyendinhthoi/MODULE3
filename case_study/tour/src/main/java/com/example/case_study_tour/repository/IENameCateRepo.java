@@ -12,4 +12,6 @@ public interface IENameCateRepo {
     void updateCate();
 
     ENameCate getIdAvailable(int employeeId, String s_date, String e_date);
+
+    void updateCateDel();
 }

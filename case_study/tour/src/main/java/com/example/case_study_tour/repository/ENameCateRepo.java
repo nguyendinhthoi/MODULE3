@@ -19,7 +19,12 @@ public class ENameCateRepo implements IENameCateRepo {
             "where employee_id = ? and" +
             " ((? between start_date and end_date) or (? between start_date and end_date));";
 
-    private static final String UPDATE_CATE = "update employees " + "set employee_status = 1 " + "where employees.employee_id " + "in " + "(select employee_id " + "from tours); ";
+    private static final String UPDATE_CATE = "update employees set employee_status = 1 " +
+            "where employees.employee_id " +
+            "in (select employee_id from tours); ";
+    private static final String UPDATE_CATE_DEL = "update employees set employee_status = 0 " +
+            "where employees.employee_id " +
+            "in (select employee_id from tours where is_delete =1); ";
 
     @Override
     public List<ENameCate> displayCateN() {
@@ -48,7 +53,7 @@ public class ENameCateRepo implements IENameCateRepo {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_NOT_AVAILABLE);
             preparedStatement.setInt(1, employee_id);
             preparedStatement.setString(2, s_date);
-            preparedStatement.setString(3,e_date);
+            preparedStatement.setString(3, e_date);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("employee_id");
@@ -61,11 +66,24 @@ public class ENameCateRepo implements IENameCateRepo {
         return eNameCate;
     }
 
+
     @Override
     public void updateCate() {
         Connection connection = Base.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CATE);
+            preparedStatement.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void updateCateDel() {
+        Connection connection = Base.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CATE_DEL);
             preparedStatement.executeUpdate();
             connection.close();
         } catch (SQLException e) {

@@ -34,14 +34,19 @@ public class TourRepo implements ITourRepo {
             ", `image`) " +
             "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
     private static final String DELETE = "update tours set is_delete = 1 where tour_id = ?;";
-    private static final String SELECT_UNDEL = "select tour_id, tour_name, tour_description, tour_price, tour_available_seats," +
-            " start_date, end_date, employee_name, place_start, place_end, tour_places_name, image" +
-            " from tours as t" +
-            " join employees as ee" +
-            " on t.employee_id = ee.employee_id" +
-            " join tour_places as tp" +
-            " on t.tour_places_id = tp.tour_places_id" +
-            " where t.is_delete = 0";
+    private static final String SELECT_UNDEL = "SELECT t.tour_id AS tour_id,t.tour_name AS tour_name," +
+            "t.tour_description AS tour_description,t.tour_price AS tour_price," +
+            "t.tour_available_seats AS tour_available_seats,t.start_date AS start_date," +
+            "t.end_date AS end_date,ee.employee_name AS employee_name,t.place_start AS place_start," +
+            "t.place_end AS place_end,tp.tour_places_name AS tour_places_name,t.image AS image " +
+            "FROM tours AS t " +
+            "JOIN " +
+            "employees AS ee ON t.employee_id = ee.employee_id " +
+            "JOIN " +
+            "tour_places AS tp ON t.tour_places_id = tp.tour_places_id " +
+            "WHERE " +
+            "t.is_delete = 0 " +
+            "AND CURDATE() < t.start_date;";
 
     private static final String UPDATE = "update tours set tour_name = ? ," +
             "tour_description = ? , " +

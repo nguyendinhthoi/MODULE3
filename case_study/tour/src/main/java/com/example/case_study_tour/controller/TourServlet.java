@@ -14,6 +14,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -48,7 +49,6 @@ public class TourServlet extends HttpServlet {
     }
 
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -77,11 +77,12 @@ public class TourServlet extends HttpServlet {
 //            List<TourListDTO> tourList = tourService.displayDTO();
             List<TourListDTO> tourList = tourService.displayUnDel();
             request.setAttribute("tours", tourList);
-            request.getRequestDispatcher("views/list.jsp").forward(request, response);
+            request.getRequestDispatcher("views/2.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
     }
+
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
         try {
@@ -89,7 +90,7 @@ public class TourServlet extends HttpServlet {
             List<ENameCate> eNameCates = nameCateService.displayCateN();
             request.setAttribute("nameEmployee", eNameCates);
             request.setAttribute("place", tourPlaces);
-            request.getRequestDispatcher("/views/create.jsp").forward(request, response);
+            request.getRequestDispatcher("/views/create1.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
@@ -115,37 +116,58 @@ public class TourServlet extends HttpServlet {
         listImage.add(image2);
         listImage.add(image3);
 
+        Tour tour = new Tour(name, desc, price, quantity, s_date, e_date, employee_id, s_place, e_place, type_place_id, listImage);
+
+        List<TourPlace> tourPlaces = tourPlaceService.displayCateP();
+        List<ENameCate> eNameCates = nameCateService.displayCateN();
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            Date startDate = simpleDateFormat.parse(s_date);
-            Date endDate = simpleDateFormat.parse(e_date);
-            if (endDate.compareTo(startDate) > 0) {
-                Tour tour = new Tour(name, desc, price, quantity, s_date, e_date, employee_id, s_place, e_place, type_place_id, listImage);
-                ENameCate eNameCate;
 
-                eNameCate = nameCateService.getIdAvailable(employee_id, s_date, e_date);
-                if (eNameCate == null) {
-                    tourService.createTour(tour);
-                    nameCateService.updateCate();
-                    request.setAttribute("tour", tour);
-                    request.setAttribute("message", "Bạn đã thêm mới tour thành công");
-                    request.getRequestDispatcher("/views/create.jsp").forward(request, response);
-                } else {
-                    if (employee_id == eNameCate.getEmployeeId()) {
-                        request.setAttribute("messageE", "Hướng dẫn viên này đang bận tour khác, vui lòng nhập lại");
-                        request.getRequestDispatcher("/views/create.jsp").forward(request, response);
-                    } else {
+        try {
+            LocalDate startDateBefore = LocalDate.parse(s_date);
+            LocalDate currentDate = LocalDate.now();
+            if (startDateBefore.isBefore(currentDate)) {
+                request.setAttribute("place", tourPlaces);
+                request.setAttribute("nameEmployee", eNameCates);
+                request.setAttribute("tour", tour);
+                request.setAttribute("messageDB", "Ngày bắt đầu không thể ở trong quá khứ");
+                request.getRequestDispatcher("/views/create1.jsp").forward(request, response);
+            } else {
+                Date startDate = simpleDateFormat.parse(s_date);
+                Date endDate = simpleDateFormat.parse(e_date);
+                if (endDate.compareTo(startDate) > 0) {
+
+                    ENameCate eNameCate;
+
+                    eNameCate = nameCateService.getIdAvailable(employee_id, s_date, e_date);
+                    if (eNameCate == null) {
                         tourService.createTour(tour);
                         nameCateService.updateCate();
-                        request.setAttribute("tour", tour);
-                        request.setAttribute("message", "Bạn đã thêm mới tour thành công");
-                        request.getRequestDispatcher("/views/create.jsp").forward(request, response);
+
+                        request.setAttribute("message", "Bạn đã thêm mới thành công");
+                        request.getRequestDispatcher("/views/create1.jsp").forward(request, response);
+                    } else {
+                        if (employee_id == eNameCate.getEmployeeId()) {
+                            request.setAttribute("place", tourPlaces);
+                            request.setAttribute("nameEmployee", eNameCates);
+                            request.setAttribute("tour", tour);
+                            request.setAttribute("messageE", "Hướng dẫn viên này đang bận");
+                            request.getRequestDispatcher("/views/create1.jsp").forward(request, response);
+                        } else {
+                            tourService.createTour(tour);
+                            nameCateService.updateCate();
+
+                            request.setAttribute("message", "Bạn đã thêm mới thành công");
+                            request.getRequestDispatcher("/views/create1.jsp").forward(request, response);
+                        }
                     }
+                } else {
+                    request.setAttribute("place", tourPlaces);
+                    request.setAttribute("nameEmployee", eNameCates);
+                    request.setAttribute("tour", tour);
+                    request.setAttribute("messageDate", "Ngày kết thúc phải sau ngày bắt đầu");
+                    request.getRequestDispatcher("/views/create1.jsp").forward(request, response);
                 }
-            } else {
-                request.setAttribute("messageDate", "Ngày kết thúc phải sau ngày bắt đầu. Vui lòng nhập lại");
-                request.getRequestDispatcher("/views/create.jsp").forward(request, response);
             }
         } catch (ServletException | ParseException | IOException e) {
             throw new RuntimeException(e);
@@ -161,6 +183,7 @@ public class TourServlet extends HttpServlet {
                 request.getRequestDispatcher("/views/error.jsp").forward(request, response);
             } else {
                 tourService.deleteTour(id);
+                nameCateService.updateCateDel();
                 response.sendRedirect("/tourServlet");
             }
         } catch (ServletException | IOException e) {
@@ -180,11 +203,13 @@ public class TourServlet extends HttpServlet {
                 List<TourPlace> tourPlaces = tourPlaceService.displayCateP();
                 List<ENameCate> eNameCates = nameCateService.displayCateN();
 
-                request.setAttribute("listImage", listImage);
+                request.setAttribute("img1", listImage.get(0));
+                request.setAttribute("img2", listImage.get(1));
+                request.setAttribute("img3", listImage.get(2));
                 request.setAttribute("nameEmployee", eNameCates);
                 request.setAttribute("tour", tour);
                 request.setAttribute("place", tourPlaces);
-                request.getRequestDispatcher("/views/edit.jsp").forward(request, response);
+                request.getRequestDispatcher("/views/edit1.jsp").forward(request, response);
             }
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
@@ -241,7 +266,7 @@ public class TourServlet extends HttpServlet {
                 request.setAttribute("tour", tour1);
                 request.setAttribute("place", tourPlaces);
                 request.setAttribute("message", "Đã cập nhật thành công");
-                request.getRequestDispatcher("/views/edit.jsp").forward(request, response);
+                request.getRequestDispatcher("/views/edit1.jsp").forward(request, response);
             }
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
@@ -257,14 +282,14 @@ public class TourServlet extends HttpServlet {
                 request.getRequestDispatcher("/views/error.jsp").forward(request, response);
             } else {
                 request.setAttribute("tour", tourListDTO);
-                request.setAttribute("listImage", listImage);
+                request.setAttribute("image1", listImage.get(0));
+                request.setAttribute("image2", listImage.get(1));
+                request.setAttribute("image3", listImage.get(2));
                 request.getRequestDispatcher("/views/view.jsp").forward(request, response);
             }
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
     }
-
-
 }
 
